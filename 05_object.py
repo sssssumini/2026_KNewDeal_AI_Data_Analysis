@@ -72,3 +72,22 @@ print(num, ">>>", type(num))
 print(fake_num, ">>>", type(fake_num))
 print(str, ">>>", type(str))
 print(ok, ">>>", type(ok))
+
+# =================
+
+print("=== 자료형마다 동작이 다른 것 확인하기 ===")
+
+print(3 + 5)
+print("3" + "5")
+print("안녕하" + "세요")  # 안녕하세요
+
+print("=== 자주하는 실수 ===")
+print(0.1 + 0.9)  # 가끔 컴퓨터 내부 연산 과정에서 아주 작은 오차가 발생하는 경우도 있음
+
+print(round(0.1 + 0.8, 2))  # 소수 둘째 자리 반올림 >> 0.9 출력
+
+# str과 int/float은 덧셈 불가
+# print ("123" + 456) # TypeError발생
+
+print(10 / 2)
+print(type(10 / 2))

@@ -53,3 +53,33 @@ print("hello" == "Hello")  # False
 print("hello" == "hello ")  # False
 # 3. 부정연산자
 print("hello" != "hello")  # False
+
+# 질문 1) hello 변수에 할당하는 값을 따옴표로 감싸지 않고 비교
+# print("=== 질문 1) hello 변수에 할당하는 값을 따옴표로 감싸지 않고 비교 ===")
+# hello = hi
+# print(hello == hi)  # NameError(선언하지 않은 이름 호출했을 때)
+# hi는 따옴표에 감싸져있지 않기 때문에 변수로 취급됨
+# 그런데 우리는 hi 변수를 선언한 적이 없기 때문에 에러
+
+# 질문 1) 해결방법
+# print("=== 질문 1) 해결 방법 ===")
+hi = "안녕"  # hello 변수에 hi 변수를 할당하기 전 hi 변수 선언
+hello = hi  # print(hello) > 안녕
+print("=== 변수 hello(안녕)와 변수 hi(안녕) 비교 ===")
+print(hello == hi)  # True
+
+# ==============================
+# and / or / not : 논리연산자
+# and :둘 다 참이면 True 반환
+print(5 == 5 and 7 == 7)  # True
+print(5 == 7 and 7 == 7)  # False
+print(5 == 5 and 7 != 7)  # False
+
+# or :둘 중 하나가 참이면 True 반환
+print(5 == 5 or 7 == 7)  # True
+print(5 == 7 or 7 == 7)  # True
+print(5 == 5 or 7 != 7)  # True
+
+# not : 값을 반대로 뒤집음
+print(not True)
+print(not 5==5)

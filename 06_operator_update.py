@@ -36,3 +36,20 @@ print("안녕" + " " + "하세요")
 
 # 문자열 곱하기
 print("안녕" * 5)  # 안녕안녕안녕안녕안녕
+
+# ====================
+print("=== 비교연산자 ===")
+
+print(7 < 16)  # True
+print(7 > 16)  # False
+print(7 <= 16)  # True
+print(7 >= 16)  # False
+print(7 == 16)  # False
+print(7 != 16)  # True
+
+# 1. 대소문자구분
+print("hello" == "Hello")  # False
+# 2. 공백이 있어도 다르다고 판단
+print("hello" == "hello ")  # False
+# 3. 부정연산자
+print("hello" != "hello")  # False

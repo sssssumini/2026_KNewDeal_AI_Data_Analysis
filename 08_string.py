@@ -39,3 +39,8 @@ print(" " in "설비중고장")  # False
 # find() <- 특정 ()가 처음 나오는 위치 번호 반환 / 없으면 -1
 
 # index()와 find() 차이 <- 없을 때 index는 오류 발생, find는 -1 return
+
+email = "hong@gmail.com"
+at = email.find("@")
+user_id = email[:at]
+print(user_id)

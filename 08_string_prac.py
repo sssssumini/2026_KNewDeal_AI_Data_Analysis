@@ -153,3 +153,26 @@ print("\n== 실습 : f-string으로 변수 끼워 출력하기 ==")
 sulbi = "PUMP_A"
 temp = 87
 print(f"설비 {sulbi}, 온도 {temp}도")
+
+# == 실습 : f-string 안에서 계산하기 ==
+print("\n== 실습 : f-string 안에서 계산하기 ==")
+
+kor = 90
+eng = 76
+mat = 99
+avg = (kor + eng + mat) / 3
+print(f"평균 : {avg}")
+
+# == 실습 : 소수점 자릿수 지정하기 ==
+print("\n== 실습 : 소수점 자릿수 지정하기 ==")
+
+a = 87.456
+print(f"{a:.1f} {a:.2f}")
+
+
+# == 실습 : 센서로그 한 줄 정리 리포트 만들기 ==
+print("\n== 실습 : 센서로그 한 줄 정리 리포트 만들기 ==")
+
+str = "5, sensor_2, WARNING, 0.78912"
+s = str.replace(" ", "").split(",")
+print(f"[센서 {s[1]}] 상태 {s[2].lower()}, 측정값 {float(s[3]):.2f}")

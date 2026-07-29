@@ -97,7 +97,7 @@ print("\n=== 실습 : 정렬하고 탐색하기 ===")
 temp = [22, 30, 56, 33, 12, 345, 53, 12, 12]
 temp_sort = sorted(temp)  # 오름차순
 print(f"원본 : {temp}, 오름차순 정렬 : {temp_sort}")
-temp_rev = list(reversed(temp))
+temp_rev = list(reversed(temp_sort))
 print(f"원본 : {temp}, 뒤집어 정렬 : {temp_rev}")
 count_12 = temp.count(12)
 print(f"12의 개수는 {count_12}")

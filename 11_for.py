@@ -38,9 +38,9 @@ print("")
 num = input("숫자를 입력하세요 > ")
 count = 0
 
-enumerate : 낱낱이 세다
-enumerate의 인자는 자료형 list, set, tuple, dictionary, string
-index, value 값 반환
+# enumerate : 낱낱이 세다
+# enumerate의 인자는 자료형 list, set, tuple, dictionary, string
+# index, value 값 반환
 
 for i in enumerate("string"):
     print(i, end=" ")

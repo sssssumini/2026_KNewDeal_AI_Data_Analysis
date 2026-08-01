@@ -15,7 +15,7 @@
 
 # 튜플 언패킹
 # 튜플에 담긴 값을 변수로 한 번에 분리
-# 튜플은 수정 불가 
+# 튜플은 수정 불가
 
 unpacking = (
     1,
@@ -29,3 +29,71 @@ print(one, two, three)
 test = [1, 2, 3, 4]
 one, two, three, four = test
 print(one, two, three, four)
+
+
+print("=== 실습 : 센서를 튜플로 묶고 꺼내기 ===")
+
+sensor = (
+    "모터온도",
+    78,
+)
+for i in range(len(sensor)):
+    print(sensor[i])
+
+motor, temp = sensor
+print(motor, temp)
+
+
+print("=== 실습 : 튜플 리스트를 반복 처리하기 ===")
+
+sensor = [
+    (
+        "모터온도",
+        78,
+    ),
+    (
+        "회전속도",
+        90,
+    ),
+    (
+        "펌프압력",
+        30,
+    ),
+    (
+        "펌프속도",
+        95,
+    ),
+]
+for name, temp in sensor:
+    if temp >= 90:
+        print(name, "경고")
+
+print("=== 실습 : 중첩 튜플로 센서 위치 관리하기 ===")
+
+sensor = [
+    (
+        "모터",
+        78,
+        (5, 3),
+    ),
+    (
+        "펌프",
+        80,
+        (7, 8),
+    ),
+    (
+        "진동",
+        90,
+        (10, 2),
+    ),
+    (
+        "보리차",
+        91,
+        (2, -1),
+    ),
+]
+
+for name, temp, pos in sensor:
+    x, y = pos
+    if x <= 5:
+        print(name, end=" ")

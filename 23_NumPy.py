@@ -132,6 +132,49 @@ two_dim_arr = np.array([[30, 3.4], [20, 33.4], [33, 9.8]])
 
 print(two_dim_arr[0][1])
 print(two_dim_arr[0, 1])
- 
-print(two_dim_arr[0]) # 행 추출
-print(two_dim_arr[:,1]) # 열 추출
+
+print(two_dim_arr[0])  # 행 추출
+print(two_dim_arr[:, 1])  # 열 추출
+
+# 배열의 산술 연산
+print("=" * 30)
+x = np.array([1, 2, 3])
+y = np.array([10, 20, 30])
+print(x + y)
+print(x - y)
+print(x * y)
+
+# 스칼라 연산
+print(x * 30 + 2.2)
+
+# 브로드 캐스팅
+table = np.array([[72, 2.3], [95, 6.8]])
+base = np.array([70, 2.0])
+print(table - base)
+
+# min(), max()
+temp = np.array([18.1, 38.4, 21.4, 22])
+temp_max = temp.max()
+temp_min = temp.min()
+print(temp_max, temp_min)
+
+# 정규화 공식을 브로드 캐스팅으로 적용해 변환
+# 정규화 공식
+# 정규화된X = (비교대상 - 최소값) / (최대값 - 최소값)
+test_arr = np.array([12.3, 22.3, 33.4, 44.5, 55.6, 35.7])
+test_min = test_arr.min()
+test_max = test_arr.max()
+normalized = (test_arr - test_min) / (test_max - temp_min)
+print(f"정규화 된 배열 : {normalized}")
+print(f"정규화 된 배열 : {np.round(normalized,2)}")
+# 비교 연산과 불리언 배열
+v = np.array([11, 22, 33, 44, 55])
+
+print(v < 30)
+print(v[v < 30])
+
+# where
+print(np.where(v < 30))
+
+# 다중 조건 결합
+print(v[(v < 20) | (v > 40)])

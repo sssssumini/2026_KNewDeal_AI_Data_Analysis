@@ -158,3 +158,37 @@ df_sub_bet = df_shot[df_shot["실린더압력"].between(210, 250)]
 print(df_sub_bet.head())
 print(len(df_sub_bet))
 print("-" * 10)
+
+# 실습 5. 위험 순으로 정렬하기
+df5 = df_shot.copy()
+df5_sorted = df5.sort_values("비스킷두께")
+print("정렬 전 ---------")
+print(df_shot.head())
+print("정렬 후 ---------")
+print(df5_sorted.head())
+
+
+# 실습 6. 필터링과 정렬 연결
+df6 = df_shot.copy()
+df6_sct = df6[df6["품질등급"] == "불량"]
+df6_sct_sorted = df6_sct.sort_values("비스킷두께")
+print("필터링 정렬 전 ---------")
+print(df_shot.head())
+print("필터링 정렬 후 ---------")
+print(df6_sct_sorted.head())
+
+# 실습 7. 이상 의심 설비 리포트
+print("=" * 15, "Report", "=" * 15)
+df7 = pd.read_csv("data/13_diecasting_shot.csv")
+danger = df7[(df7["비스킷두께"] >= 16) | (df7["사이클타임"] >= 100)]
+print(f"위험 예상 목록 : {len(danger)}")
+danger_sorted = danger.sort_values("형체력", ascending=False)
+print(danger_sorted.head(10))
+
+first = danger_sorted.head(1)
+sid = int(first["샷"].tolist()[0])
+force = first["형체력"].tolist()[0]
+print(f"가장 시급한 샷: {sid}번, 형체력 {force}, 우선 점검")
+
+faulty = df7[df7["품질등급"] == "불량"].sort_values("형체력", ascending=False)
+print(faulty[["샷", "형체력"]].head())

@@ -192,3 +192,21 @@ print(f"가장 시급한 샷: {sid}번, 형체력 {force}, 우선 점검")
 
 faulty = df7[df7["품질등급"] == "불량"].sort_values("형체력", ascending=False)
 print(faulty[["샷", "형체력"]].head())
+
+
+# apply 함수 
+df_apply = pd.DataFrame({
+    "점수" : [80,98,32]
+})
+print(df_apply)
+
+def isPass(row, name, temp) :
+    if row["점수"] >= 60:
+        return name + "합격" + temp
+    else :
+        return name + "불합격" + temp
+
+# apply() df의 모든 행, 열 기준으로 함수를 적용할 수 있도록 하는 메서드
+# .apply(func, axis= 0은 열, 1은 행, ...)
+df_apply["결과"] = df_apply.apply(isPass, axis=1, name = "jake", temp="~")
+print(df_apply)
